@@ -11,6 +11,8 @@ addonHandler.initTranslation()
 
 # Code from Emoticons add-on
 def onInstall():
+	import gui
+	import wx
 	for addon in addonHandler.getAvailableAddons():
 		if addon.name == "applicationsDictionary":
 			if gui.messageBox(
