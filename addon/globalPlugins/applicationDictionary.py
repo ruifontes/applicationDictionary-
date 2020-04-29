@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Application Dictionary addon for NVDA
 #This file is covered by the GNU General Public License.
 #See the file COPYING.txt for more details.
@@ -16,8 +17,10 @@ try:
 except:
 	SCRCAT_CONFIG = None
 
-# Todo: fix a problem that causes dictionaries not to load sometimes on WUP apps
-# Todo: When in NVDA GUI disable previous app dictionary
+# ToDo: fix a problem that causes dictionaries not to load sometimes on UWP apps
+# ToDo: When in NVDA GUI disable previous app dictionary
+# -*- coding: utf-8 -*-
+
 def getAppName():
 	return api.getFocusObject().appModule.appName
 
@@ -28,10 +31,10 @@ def getDictFilePath(appName):
 
 def loadEmptyDicts():
 	dirs = os.listdir(appDictsPath) if os.path.exists(appDictsPath) else []
-	return dict([(f[:-4], None) for f in dirs if os.path.isfile(os.path.join(appDictsPath, f)) and f.endswith(".dic")])
+	return dict([(f[:-4], None) for f in dirs if os.path.isfile(os.path.join(appDictsPath, f)) and f.endswith (".dic")])
 
 def loadDict(appName):
-	ensureEntryCacheSize(appName)
+	ensureEntryCacheSize (appName)
 	dict = speechDictHandler.SpeechDict()
 	dict.load(getDictFilePath(appName))
 	dicts[appName] = dict
@@ -81,7 +84,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.__setCurrentDict(dict)
 		nextHandler()
 
-# Todo: fix NVDA silence when script_editDict is called inside any NVDA dialog
+# ToDo: fix NVDA silence when script_editDict is called inside any NVDA dialog
 	def script_editDict(self, gesture):
 		prevFocus = gui.mainFrame.prevFocus
 		appName = prevFocus.appModule.appName if prevFocus else getAppName()
@@ -91,6 +94,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Translators: title of application dictionary dialog.
 		title = _("Dictionary for {arg0}").format(arg0=appName)
 		gui.mainFrame._popupSettingsDialog(gui.DictionaryDialog, title, dict)
+
 	script_editDict.category = SCRCAT_CONFIG
 	# Translators: Message presented in input help mode.
 	script_editDict.__doc__ = _("Shows the application-specific dictionary dialog")
