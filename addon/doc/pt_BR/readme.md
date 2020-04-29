@@ -19,4 +19,4 @@ O comando padrão pode ser modificado no diálogo "Definir comandos", na secçã
 <br>
 "NVDA+Shift+p": Abre o diálogo do dicionário de aplicativos
 
-[1] https://github.com/ruifontes/applicationDictionary-/releases/download/1.3/applicationDictionary-1.3.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/1.3/applicationDictionary-1.3.nvda-addon
