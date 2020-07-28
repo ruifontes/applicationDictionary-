@@ -5,6 +5,7 @@
 #Copyright (C) 2018 Ricardo Leonarczyk <ricardo.leonarczyk95@gmail.com>
 
 import os
+import shutil
 import api
 import globalPluginHandler
 import gui
@@ -25,9 +26,19 @@ def getAppName():
 	return api.getFocusObject().appModule.appName
 
 def getDictFilePath(appName):
-	if not os.path.exists(appDictsPath):
-		os.makedirs(appDictsPath)
-	return os.path.join(appDictsPath, appName + ".dic")
+	dictFileName = appName + ".dic"
+	dictFilePath = os.path.join(appDictsPath, dictFileName)
+	oldDictFilePath = os.path.abspath(os.path.join(speechDictHandler.speechDictsPath, dictFileName))
+	if not os.path.isfile(dictFilePath) and os.path.isfile(oldDictFilePath):
+		if not os.path.exists(appDictsPath):
+			os.makedirs(appDictsPath)
+		try:
+			shutil.move(oldDictFilePath, dictFilePath)
+		except:
+			pass
+	if os.path.isfile(dictFilePath) and os.path.getsize(dictFilePath) <= 0:
+		os.unlink(dictFilePath)
+	return dictFilePath
 
 def loadEmptyDicts():
 	dirs = os.listdir(appDictsPath) if os.path.exists(appDictsPath) else []
@@ -49,7 +60,6 @@ def getDict(appName):
 			return loadDict(appName)
 
 def createDict(appName):
-	open(getDictFilePath(appName), "a").close()
 	return loadDict(appName)
 
 def ensureEntryCacheSize(appName):
