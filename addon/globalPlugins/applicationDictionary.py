@@ -58,6 +58,8 @@ def getDict(appName):
 			return dict
 		else:
 			return loadDict(appName)
+	else:
+		return loadDict(appName)
 
 def createDict(appName):
 	return loadDict(appName)
