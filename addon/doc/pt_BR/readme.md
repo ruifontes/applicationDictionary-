@@ -1,22 +1,20 @@
 # Dicionário de aplicações
 
 ## Informações
-* Autores: Ricardo M. Leonarczyk and Rui Fontes
-* Versão: 1.3
-* Baixar a [versão estável][1]
-* Compatibilidade: NVDA: 2019.1 a 2020.1
+* Autores: Rui Fontes e Ricardo Leonarczyk
+* actualizado em 21/03/2022
+* Descarregar a [versão estável][1]
+* Compatibilidade: NVDA versão 2022.1 e seguintes
 <br>
-## Utilização
+# Apresentação
 <br>
-Este complemento simples permite a criação de dicionários do NVDA específicos para um aplicativo.
-<br>
-Para usar o complemento basta abrir o aplicativo para o qual pretende um dicionário específico e pressionar NVDA+shift+p.
-Será aberto um dicionário, em tudo semelhante ao normal dicionário do NVDA,.
-Neste dicionário poderá introduzir as entradas que deseja que sejam apenas válidas para o aplicativo activo (O nome do aplicativo fará parte do nome da janela).
-O comando padrão pode ser modificado no diálogo "Definir comandos", na secção "Configuração",  opção "Apresenta o diálogo do dicionário de aplicativos".
+Este extra permite criar dicionários do NVDA específicos para uma aplicação.
+Para utilizá-lo, basta na aplicação, para a  qual deseja criar um dicionário, pressionar NVDA+shift+p.
+O diálogo de dicionários do NVDA irá abrir para que se possa adicionar entradas válidas somente para a aplicação ativa (o nome da aplicação deverá aparecer no título do diálogo).
+O comando padrão pode ser modificado através do diálogo "Definir comandos:" na secção "Configuração", opção "Apresenta o diálogo do dicionário de aplicações".
 <br>
 ## Comando
 <br>
-"NVDA+Shift+p": Abre o diálogo do dicionário de aplicativos
+"NVDA+Shift+p": Shows the application-specific dictionary dialog
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/1.3/applicationDictionary-1.3.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2022.1/applicationDictionary-2022.1.nvda-addon

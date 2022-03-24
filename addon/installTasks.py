@@ -2,6 +2,7 @@
 #This file is covered by the GNU General Public License.
 #See the file COPYING.txt for more details.
 #Copyright (C) 2018 Ricardo Leonarczyk <ricardo.leonarczyk95@gmail.com>
+#Copyright (C) 2022 Rui Fontes <rui.fontes@tiflotecnia.com>
 
 import addonHandler
 import gui
@@ -11,8 +12,6 @@ addonHandler.initTranslation()
 
 # Code from Emoticons add-on
 def onInstall():
-	import gui
-	import wx
 	for addon in addonHandler.getAvailableAddons():
 		if addon.name == "applicationsDictionary":
 			if gui.messageBox(

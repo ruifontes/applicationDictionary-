@@ -1,51 +1,42 @@
-# -*- coding: utf-8 -*-
 #Application Dictionary addon for NVDA
 #This file is covered by the GNU General Public License.
 #See the file COPYING.txt for more details.
 #Copyright (C) 2018 Ricardo Leonarczyk <ricardo.leonarczyk95@gmail.com>
+#Copyright (C) 2022 Rui Fontes <rui.fontes@tiflotecnia.com>
 
 import os
-import shutil
 import api
 import globalPluginHandler
 import gui
+from gui.speechDict import *
 import wx
 import speechDictHandler
 import addonHandler
 addonHandler.initTranslation()
+# For update process
+from . update import *
 try:
 	from globalCommands import SCRCAT_CONFIG
 except:
 	SCRCAT_CONFIG = None
 
-# ToDo: fix a problem that causes dictionaries not to load sometimes on UWP apps
-# ToDo: When in NVDA GUI disable previous app dictionary
-# -*- coding: utf-8 -*-
-
+title = ""
+# Todo: fix a problem that causes dictionaries not to load sometimes on WUP apps
+# Todo: When in NVDA GUI disable previous app dictionary
 def getAppName():
 	return api.getFocusObject().appModule.appName
 
 def getDictFilePath(appName):
-	dictFileName = appName + ".dic"
-	dictFilePath = os.path.join(appDictsPath, dictFileName)
-	oldDictFilePath = os.path.abspath(os.path.join(speechDictHandler.speechDictsPath, dictFileName))
-	if not os.path.isfile(dictFilePath) and os.path.isfile(oldDictFilePath):
-		if not os.path.exists(appDictsPath):
-			os.makedirs(appDictsPath)
-		try:
-			shutil.move(oldDictFilePath, dictFilePath)
-		except:
-			pass
-	if os.path.isfile(dictFilePath) and os.path.getsize(dictFilePath) <= 0:
-		os.unlink(dictFilePath)
-	return dictFilePath
+	if not os.path.exists(appDictsPath):
+		os.makedirs(appDictsPath)
+	return os.path.join(appDictsPath, appName + ".dic")
 
 def loadEmptyDicts():
 	dirs = os.listdir(appDictsPath) if os.path.exists(appDictsPath) else []
-	return dict([(f[:-4], None) for f in dirs if os.path.isfile(os.path.join(appDictsPath, f)) and f.endswith (".dic")])
+	return dict([(f[:-4], None) for f in dirs if os.path.isfile(os.path.join(appDictsPath, f)) and f.endswith(".dic")])
 
 def loadDict(appName):
-	ensureEntryCacheSize (appName)
+	ensureEntryCacheSize(appName)
 	dict = speechDictHandler.SpeechDict()
 	dict.load(getDictFilePath(appName))
 	dicts[appName] = dict
@@ -58,10 +49,9 @@ def getDict(appName):
 			return dict
 		else:
 			return loadDict(appName)
-	else:
-		return loadDict(appName)
 
 def createDict(appName):
+	open(getDictFilePath(appName), "a").close()
 	return loadDict(appName)
 
 def ensureEntryCacheSize(appName):
@@ -77,10 +67,21 @@ dicts = loadEmptyDicts()
 entryCacheSize = 2000
 
 
+class AppDictionaryDialog(DictionaryDialog):
+	def __init__(self, parent):
+		super().__init__(
+			parent,
+			# Translators: Title for app speech dictionary dialog.
+			title,
+			speechDict = apDict)
+
+
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
+		_MainWindows = Initialize()
+		_MainWindows.start()
 		self.__currentDict = None
 		self.__currentAppName = None
 		self.dictsMenu = gui.mainFrame.sysTrayIcon.preferencesMenu.GetMenuItems()[1].GetSubMenu()
@@ -96,17 +97,18 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.__setCurrentDict(dict)
 		nextHandler()
 
-# ToDo: fix NVDA silence when script_editDict is called inside any NVDA dialog
+	# Todo: fix NVDA silence when script_editDict is called inside any NVDA dialog
 	def script_editDict(self, gesture):
 		prevFocus = gui.mainFrame.prevFocus
 		appName = prevFocus.appModule.appName if prevFocus else getAppName()
-		dict = getDict(appName)
-		if not dict:
-			dict = createDict(appName)
+		global apDict
+		apDict = getDict(appName)
+		if not apDict:
+			apDict = createDict(appName)
 		# Translators: title of application dictionary dialog.
+		global title
 		title = _("Dictionary for {arg0}").format(arg0=appName)
-		gui.mainFrame._popupSettingsDialog(gui.DictionaryDialog, title, dict)
-
+		gui.mainFrame._popupSettingsDialog(AppDictionaryDialog)
 	script_editDict.category = SCRCAT_CONFIG
 	# Translators: Message presented in input help mode.
 	script_editDict.__doc__ = _("Shows the application-specific dictionary dialog")
@@ -122,3 +124,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	__gestures = {
 		"kb:NVDA+Shift+p": "editDict"
 }
+
+if globalVars.appArgs.secure:
+	# Override the global plugin to disable it.
+	GlobalPlugin = globalPluginHandler.GlobalPlugin

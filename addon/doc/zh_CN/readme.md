@@ -1,10 +1,9 @@
 # 应用程序字典
 
 ## 信息
-* 作者：Ricardo M. Leonarczyk 和 Rui Fontes
-* 版本：1.3
+* 作者：Rui Fontes 和 Ricardo M. Leonarczyk
 * 下载[稳定版][1]
-* 兼容性：NVDA：2019.1 至 2021.3
+* 兼容性：NVDA：2022.1 and beyond
 
 
 ## 用法
@@ -19,4 +18,4 @@
 
 “NVDA+Shift+p”：打开特定于应用程序的字典对话框
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/1.3/applicationDictionary-1.3.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2022.1/applicationDictionary-2022.1.nvda-addon

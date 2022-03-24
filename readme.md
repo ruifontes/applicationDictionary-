@@ -1,10 +1,10 @@
 # Application Dictionary
 
 ## Informations
-* Authors: Ricardo M. Leonarczyk and Rui Fontes
-* Version: 1.3
+* Authors: Rui Fontes and Ricardo M. Leonarczyk
+* Version: 2022.03
 * Download [stable version][1]
-* Compatibility: NVDA: 2019.1 to 2020.1
+* Compatibility: NVDA 2022.1 and beyond
 <br>
 ## Usage
 <br>
@@ -18,4 +18,4 @@ The default add-on shortcut can be changed through NVDA's input gestures dialog:
 <br>
 "NVDA+Shift+p": Shows the application-specific dictionary dialog
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/1.3/applicationDictionary-1.3.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2022.1/applicationDictionary-2022.1.nvda-addon
