@@ -3,22 +3,28 @@
 #See the file COPYING.txt for more details.
 #Copyright (C) 2018 Ricardo Leonarczyk <ricardo.leonarczyk95@gmail.com>
 #Copyright (C) 2022 Rui Fontes <rui.fontes@tiflotecnia.com>
+# Thanks by Cyrille Bougot colaboration!
 
 import os
+import shutil
 import api
 import globalPluginHandler
 import gui
-from gui.speechDict import *
+try:
+	from gui.speechDict import DictionaryDialog
+except:
+	from gui import DictionaryDialog
 import wx
 import speechDictHandler
-import addonHandler
-addonHandler.initTranslation()
-# For update process
-from . update import *
+from scriptHandler import script
 try:
 	from globalCommands import SCRCAT_CONFIG
 except:
 	SCRCAT_CONFIG = None
+import addonHandler
+addonHandler.initTranslation()
+# For update process
+from . update import *
 
 title = ""
 # Todo: fix a problem that causes dictionaries not to load sometimes on WUP apps
@@ -27,9 +33,19 @@ def getAppName():
 	return api.getFocusObject().appModule.appName
 
 def getDictFilePath(appName):
-	if not os.path.exists(appDictsPath):
-		os.makedirs(appDictsPath)
-	return os.path.join(appDictsPath, appName + ".dic")
+	dictFileName = appName + ".dic"
+	dictFilePath = os.path.join(appDictsPath, dictFileName)
+	oldDictFilePath = os.path.abspath(os.path.join(speechDictHandler.speechDictsPath, dictFileName))
+	if not os.path.isfile(dictFilePath) and os.path.isfile(oldDictFilePath):
+		if not os.path.exists(appDictsPath):
+			os.makedirs(appDictsPath)
+		try:
+			shutil.move(oldDictFilePath, dictFilePath)
+		except:
+			pass
+	if os.path.isfile(dictFilePath) and os.path.getsize(dictFilePath) <= 0:
+		os.unlink(dictFilePath)
+	return dictFilePath
 
 def loadEmptyDicts():
 	dirs = os.listdir(appDictsPath) if os.path.exists(appDictsPath) else []
@@ -49,9 +65,10 @@ def getDict(appName):
 			return dict
 		else:
 			return loadDict(appName)
+	else:
+		return loadDict(appName)
 
 def createDict(appName):
-	open(getDictFilePath(appName), "a").close()
 	return loadDict(appName)
 
 def ensureEntryCacheSize(appName):
@@ -64,7 +81,7 @@ def ensureEntryCacheSize(appName):
 
 appDictsPath = os.path.abspath(os.path.join(speechDictHandler.speechDictsPath, "appDicts"))
 dicts = loadEmptyDicts()
-entryCacheSize = 2000
+entryCacheSize = 20000
 
 
 class AppDictionaryDialog(DictionaryDialog):
@@ -97,7 +114,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.__setCurrentDict(dict)
 		nextHandler()
 
-	# Todo: fix NVDA silence when script_editDict is called inside any NVDA dialog
+	@script( 
+	# For translators: Message to be announced during Keyboard Help 
+	description = _("Shows the application-specific dictionary dialog"), 
+	category = (SCRCAT_CONFIG), 
+	gesture = "kb:NVDA+Control+Shift+d")
 	def script_editDict(self, gesture):
 		prevFocus = gui.mainFrame.prevFocus
 		appName = prevFocus.appModule.appName if prevFocus else getAppName()
@@ -108,10 +129,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Translators: title of application dictionary dialog.
 		global title
 		title = _("Dictionary for {arg0}").format(arg0=appName)
-		gui.mainFrame._popupSettingsDialog(AppDictionaryDialog)
-	script_editDict.category = SCRCAT_CONFIG
-	# Translators: Message presented in input help mode.
-	script_editDict.__doc__ = _("Shows the application-specific dictionary dialog")
+		try:
+			gui.mainFrame._popupSettingsDialog(AppDictionaryDialog)
+		except:
+			gui.mainFrame._popupSettingsDialog(gui.DictionaryDialog, title, dict)
 
 	# Temp dictionary usage taken from emoticons add-on
 	def __setCurrentDict(self, dict):
@@ -121,9 +142,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if self.__currentDict:
 			speechDictHandler.dictionaries["temp"].extend(self.__currentDict)
 
-	__gestures = {
-		"kb:NVDA+Shift+p": "editDict"
-}
+	def terminate(self):
+		# This terminate function is necessary when creating new menus.
+		try:
+			if wx.version().startswith("4"):
+				self.dictsMenu.Remove(self.appDictDialog)
+			else:
+				self.dictsMenu.RemoveItem(self.appDictDialog)
+		except:
+			pass
+
 
 if globalVars.appArgs.secure:
 	# Override the global plugin to disable it.

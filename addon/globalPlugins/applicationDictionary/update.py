@@ -45,7 +45,7 @@ bundle = getOurAddon()
 
 def initConfiguration():
 	confspec = {
-		"isUpgrade": "boolean(default=True)",
+		"isUpgrade": "boolean(default=False)",
 	}
 	config.conf.spec[ourAddon.manifest["name"]] = confspec
 
@@ -61,7 +61,7 @@ def setConfig(key, value):
 
 initConfiguration()
 shouldUpdate = getConfig("isUpgrade")
-urlRepos = "https://api.github.com/repos/ruifontes/"+ourAddon.manifest["name"]+"/releases"
+urlRepos = "https://api.github.com/repos/ruifontes/"+ourAddon.manifest["name"]+"-/releases"
 urlName = ""
 urlN = ""
 directory = ""

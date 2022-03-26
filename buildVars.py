@@ -17,17 +17,17 @@ addon_info = {
 	"addon_summary" : _("Application dictionary"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description" : _("""Allows creation of application-specific dictionaries. Use the command "NVDA+Shift+p" to access the dictionary for the current application."""),
+	"addon_description" : _("""Allows creation of application-specific dictionaries. Use the command "NVDA+Control+Shift+d" to access the dictionary for the current application."""),
 	# version
-	"addon_version" : "2022.03",
+	"addon_version" : "2022.03.26",
 	# Author(s)
-	"addon_author" : "Rui Fontes <rui.fontes@tiflotecnia.com> and Ricardo Leonarczyk <ricardo.leonarczyk95@gmail.com>",
+	"addon_author" : "Rui Fontes <rui.fontes@tiflotecnia.com> and Ricardo Leonarczyk <ricardo.leonarczyk95@gmail.com> and colaboration of Cyrille Bougot",
 	# URL for the add-on documentation support
 	"addon_url" : "https://github.com/ruifontes/applicationDictionary-",
 	# Documentation file name
 	"addon_docFileName" : "readme.html",
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
-	"addon_minimumNVDAVersion" : "2022.1",
+	"addon_minimumNVDAVersion" : "2019.3",
 	# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
 	"addon_lastTestedNVDAVersion" : "2022.1",
 	# Add-on update channel (default is None, denoting stable releases, and for development releases, use "dev"; do not change unless you know what you are doing)
