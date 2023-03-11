@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: applicationDictionary 2022.03\n"
+"POT-Creation-Date: 2022-07-29 21:15+0200\n"
+"PO-Revision-Date: 2022-07-30 11:47+0200\n"
+"Last-Translator: \n"
+"Language-Team: Sergio Gómez\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Poedit-Basepath: C:/Users/Sergio/AppData/Roaming/nvda/addons/"
+"applicationDictionary\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: globalPlugins/applicationDictionary/__init__.py:106
+msgid "&Application Dictionary..."
+msgstr "Diccionario por aplicación..."
+
+#: globalPlugins/applicationDictionary/__init__.py:106
+msgid ""
+"A dialog where you can set application-specific dictionary by adding "
+"dictionary entries to the list"
+msgstr ""
+"Un cuadro de diálogo en el que puede establecer un diccionario "
+"específico de la aplicación agregando entradas de diccionario a la lista"
+
+#: globalPlugins/applicationDictionary/__init__.py:119
+msgid "Shows the application-specific dictionary dialog"
+msgstr "Muestra el diálogo del diccionario específico de la aplicación."
+
+#: globalPlugins/applicationDictionary/__init__.py:131
+#, python-brace-format
+msgid "Dictionary for {arg0}"
+msgstr "Diccionario para {arg0}"
+
+#: globalPlugins/applicationDictionary/update.py:95
+msgid ""
+"It is available a new version of this add-on.\n"
+" Do you want to update?"
+msgstr ""
+"Está disponible una nueva versión de este complemento.\\n\n"
+" ¿Quieres actualizar?"
+
+#: globalPlugins/applicationDictionary/update.py:136
+msgid ""
+"This new version of this add-on is not compatible with your version of "
+"NVDA.\n"
+" The update process will be terminated."
+msgstr ""
+"Esta nueva versión de este complemento no es compatible con tu versión "
+"de NVDA.\\n\n"
+" El proceso de actualización finalizará."
+
+#: globalPlugins/applicationDictionary/update.py:159
+msgid "Check for updates at startup"
+msgstr "Buscar actualizaciones al iniciar"
+
+#: installTasks.py:19
+msgid ""
+"You have installed an incompatible version of the add-on. Do you want to "
+"uninstall the incompatible version?"
+msgstr ""
+"Ha instalado una versión incompatible del complemento. ¿Quieres "
+"desinstalar la versión incompatible?"
+
+#: installTasks.py:21
+msgid "Uninstall incompatible add-on"
+msgstr "Desinstalar complemento incompatible"

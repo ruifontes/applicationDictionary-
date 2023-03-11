@@ -1,0 +1,97 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Anwendungsspezifisches Wörterbuch\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2022-03-24 02:14+0000\n"
+"PO-Revision-Date: 2022-03-28 08:34+0200\n"
+"Last-Translator: René Linke <rene.linke@hamburg.de>\n"
+"Language-Team: René Linke <rene.linke@hamburg.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#. Translators: The label for the menu item to open Application specific speech dictionary dialog.
+#: addon\globalPlugins\applicationDictionary\__init__.py:89
+msgid "&Application Dictionary..."
+msgstr "&Anwendungsspezifisches Wörterbuch..."
+
+#: addon\globalPlugins\applicationDictionary\__init__.py:89
+msgid ""
+"A dialog where you can set application-specific dictionary by adding "
+"dictionary entries to the list"
+msgstr ""
+"Ein Dialogfeld, in dem Sie anwendungsspezifische Wörterbücher einstellen "
+"können, indem Sie Wörterbuch-Einträge zur Liste hinzufügen"
+
+#: addon\globalPlugins\applicationDictionary\__init__.py:110
+#, python-brace-format
+msgid "Dictionary for {arg0}"
+msgstr "Wörterbuch für {arg0}"
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\applicationDictionary\__init__.py:114
+msgid "Shows the application-specific dictionary dialog"
+msgstr "Zeigt das Dialogfeld für das anwendungsspezifische Wörterbuch an"
+
+#. Translators: Message dialog box to ask user if wants to update.
+#: addon\globalPlugins\applicationDictionary\update.py:95
+msgid ""
+"It is available a new version of this add-on.\n"
+" Do you want to update?"
+msgstr ""
+"Eine neuere Version dieser Erweiterung ist verfügbar.\n"
+"Möchten Sie sie aktualisieren?"
+
+#. Translators: Message dialog box to inform user that the add-on is not compatible
+#: addon\globalPlugins\applicationDictionary\update.py:136
+msgid ""
+"This new version of this add-on is not compatible with your version of "
+"NVDA.\n"
+" The update process will be terminated."
+msgstr ""
+"Die neuere Version der Erweiterung ist nicht mit Ihrer NVDA-Version "
+"kompatibel.\n"
+"Der Aktualisierungsvorgang wird abgebrochen."
+
+#. Translators: Checkbox name in the configuration dialog
+#: addon\globalPlugins\applicationDictionary\update.py:159
+msgid "Check for updates at startup"
+msgstr "Beim Starten auf Aktualisierungen prüfen"
+
+#. Translators: the label of a message box dialog.
+#: addon\installTasks.py:19
+msgid ""
+"You have installed an incompatible version of the add-on. Do you want to "
+"uninstall the incompatible version?"
+msgstr ""
+"Sie haben eine inkompatible Version der Erweiterung installiert. Möchten "
+"Sie sie deinstallieren?"
+
+#. Translators: the title of a message box dialog.
+#: addon\installTasks.py:21
+msgid "Uninstall incompatible add-on"
+msgstr "Inkompatible Erweiterung deinstallieren"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: buildVars.py:17
+msgid "Application dictionary"
+msgstr "Anwendungsspezifisches Wörterbuch"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:20
+msgid ""
+"Allows creation of application-specific dictionaries. Use the command \"NVDA"
+"+Shift+p\" to access the dictionary for the current application."
+msgstr ""
+"Erstellt anwendungsspezifische Wörterbücher. Auf diese Wörterbücher können "
+"Sie mit der Tastenkombination NVDA+Strg+Umschalt+D darauf zugreifen."

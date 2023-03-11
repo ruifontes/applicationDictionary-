@@ -24,5 +24,3 @@ a { text-decoration : underline;
 text-decoration : none; 
 }
 a:focus, a:hover {outline: solid}
-:link {color: #0000FF;
-background-color: #FFFFFF}

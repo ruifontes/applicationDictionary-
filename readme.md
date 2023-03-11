@@ -2,7 +2,7 @@
 
 ## Informations
 * Authors: Rui Fontes and Ricardo M. Leonarczyk with colaboration of Cyrille Bougot
-* Version: 2022.03.26
+* Version: 2023.03
 * Download [stable version][1]
 * Compatibility: NVDA 2019.3 and beyond
 
@@ -24,5 +24,4 @@ The check for a new version will be executed everytime NVDA is loaded.
 If you want this, go to NVDA, Preferences, Options and in the add-on category check the check box.
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2022.03.26/applicationDictionary-2022.03.26.nvda-addon
-
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.03/applicationDictionary-2023.03.nvda-addon

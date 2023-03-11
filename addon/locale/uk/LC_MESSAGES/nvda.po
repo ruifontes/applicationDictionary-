@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 'applicationDictionary' package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'applicationDictionary' '2022.03.26'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2022-08-06 16:48+0300\n"
+"PO-Revision-Date: 2022-08-06 20:04+0300\n"
+"Last-Translator: Ukrainian NVDA Community <vp88.mobile@gmail.com>\n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#. Translators: The label for the menu item to open Application specific speech dictionary dialog.
+#: addon\globalPlugins\applicationDictionary\__init__.py:106
+msgid "&Application Dictionary..."
+msgstr "&Словник для програм..."
+
+#: addon\globalPlugins\applicationDictionary\__init__.py:106
+msgid ""
+"A dialog where you can set application-specific dictionary by adding "
+"dictionary entries to the list"
+msgstr ""
+"Діалог, в якому ви можете встановити словник для конкретної програми, "
+"додаючи словникові статті до списку"
+
+#. For translators: Message to be announced during Keyboard Help
+#: addon\globalPlugins\applicationDictionary\__init__.py:119
+msgid "Shows the application-specific dictionary dialog"
+msgstr "Показує діалог словника для конкретної програми"
+
+#: addon\globalPlugins\applicationDictionary\__init__.py:131
+#, python-brace-format
+msgid "Dictionary for {arg0}"
+msgstr "Словник для {arg0}"
+
+#. Translators: Message dialog box to ask user if wants to update.
+#: addon\globalPlugins\applicationDictionary\update.py:95
+msgid ""
+"It is available a new version of this add-on.\n"
+" Do you want to update?"
+msgstr ""
+"Доступна нова версія цього додатка.\n"
+"Ви хочете оновити?"
+
+#. Translators: Message dialog box to inform user that the add-on is not compatible
+#: addon\globalPlugins\applicationDictionary\update.py:136
+msgid ""
+"This new version of this add-on is not compatible with your version of "
+"NVDA.\n"
+" The update process will be terminated."
+msgstr ""
+"Нова версія цього додатка не сумісна з вашою версією NVDA.\n"
+"Процес оновлення буде скасовано."
+
+#. Translators: Checkbox name in the configuration dialog
+#: addon\globalPlugins\applicationDictionary\update.py:159
+msgid "Check for updates at startup"
+msgstr "Перевіряти наявність оновлень під час запуску"
+
+#. Translators: the label of a message box dialog.
+#: addon\installTasks.py:19
+msgid ""
+"You have installed an incompatible version of the add-on. Do you want to "
+"uninstall the incompatible version?"
+msgstr ""
+"Ви встановили несумісну версію додатка. Ви бажаєте видалити несумісну "
+"версію?"
+
+#. Translators: the title of a message box dialog.
+#: addon\installTasks.py:21
+msgid "Uninstall incompatible add-on"
+msgstr "Видалити несумісний додаток"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: buildVars.py:17
+msgid "Application dictionary"
+msgstr "Словник для програм"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:20
+msgid ""
+"Allows creation of application-specific dictionaries. Use the command \"NVDA"
+"+Control+Shift+d\" to access the dictionary for the current application."
+msgstr ""
+"Дозволяє створювати словники для окремих програм. Використовуйте команду "
+"«NVDA+Control+Shift+d», щоб отримати доступ до словника для поточної "
+"програми."
