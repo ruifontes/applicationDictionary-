@@ -19,7 +19,4 @@ El atajo de complemento predeterminado se puede cambiar a través del diálogo d
 NVDA+Control+Shift+d
 
 
-## Actualización automática
-Este complemento incluye una función de actualización automática.
-La búsqueda de una nueva versión se ejecutará cada vez que se cargue NVDA.
-Si quieres esto, ve a NVDA, Preferencias, Opciones y en la categoría de complementos marca la casilla de verificación.
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.19/applicationDictionary-2023.09.19.nvda-addon

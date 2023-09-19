@@ -18,11 +18,4 @@ Der Tastenbefehl der Erweiterung kann über das Dialogfeld für die Tastenbefehl
 NVDA+Strg+Umschalt+D
 
 
-## Automatisches Update
-Diese Erweiterung enthält eine automatische Update-Funktion.
-Die Überprüfung auf eine neuere Version wird jedes Mal beim Start von NVDA durchgeführt.
-Wenn dies aktiviert werden solll, gehen Sie in die NVDA-Einstellungen und aktivieren Sie in der Kategorie der Erweiterung das Kontrollkästchen.
-
-
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2022.03.26/applicationDictionary-2022.03.26.nvda-addon
-
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.19/applicationDictionary-2023.09.19.nvda-addon

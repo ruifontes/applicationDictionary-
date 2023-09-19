@@ -18,10 +18,4 @@
 NVDA+Control+Shift+d
 
 
-## Автоматичне оновлення
-Цей додаток містить функцію автоматичного оновлення.
-Перевірка на наявність нової версії виконуватиметься під час кожного завантаження NVDA.
-Якщо ви цього бажаєте, перейдіть до NVDA меню, «Параметри», «Налаштування» та поставте прапорець у категорії додатка.
-
-
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.03/applicationDictionary-2023.03.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.19/applicationDictionary-2023.09.19.nvda-addon

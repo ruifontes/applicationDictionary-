@@ -20,11 +20,4 @@
 NVDA+Control+Shift+d
 
 
-## Automatic update
-This add-on includes an automatic update feature.
-The check for a new version will be executed everytime NVDA is loaded.
-If you want this, go to NVDA, Preferences, Options and in the add-on category check the check box.
-
-
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2022.03.26/applicationDictionary-2022.03.26.nvda-addon
-
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.19/applicationDictionary-2023.09.19.nvda-addon

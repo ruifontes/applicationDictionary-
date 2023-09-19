@@ -2,13 +2,15 @@
 #This file is covered by the GNU General Public License.
 #See the file COPYING.txt for more details.
 #Copyright (C) 2018 Ricardo Leonarczyk <ricardo.leonarczyk95@gmail.com>
-#Copyright (C) 2022 Rui Fontes <rui.fontes@tiflotecnia.com>
+#Copyright (C) 2022-2023 Rui Fontes <rui.fontes@tiflotecnia.com>
 # Thanks by Cyrille Bougot colaboration!
 
+# Import the necessary modules
 import os
 import shutil
 import api
 import globalPluginHandler
+import globalVars
 import gui
 try:
 	from gui.speechDict import DictionaryDialog
@@ -16,15 +18,16 @@ except:
 	from gui import DictionaryDialog
 import wx
 import speechDictHandler
+import NVDAState
 from scriptHandler import script
 try:
 	from globalCommands import SCRCAT_CONFIG
 except:
 	SCRCAT_CONFIG = None
 import addonHandler
+
+# Start translation process
 addonHandler.initTranslation()
-# For update process
-from . update import *
 
 title = ""
 # Todo: fix a problem that causes dictionaries not to load sometimes on WUP apps
@@ -34,8 +37,11 @@ def getAppName():
 
 def getDictFilePath(appName):
 	dictFileName = appName + ".dic"
-	dictFilePath = os.path.join(appDictsPath, dictFileName)
-	oldDictFilePath = os.path.abspath(os.path.join(speechDictHandler.speechDictsPath, dictFileName))
+	dictFilePath = os.path.join(NVDAState.WritePaths.speechDictsDir, dictFileName)
+	try:
+		oldDictFilePath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDirdictFileName))
+	except:
+		oldDictFilePath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDir, dictFileName))
 	if not os.path.isfile(dictFilePath) and os.path.isfile(oldDictFilePath):
 		if not os.path.exists(appDictsPath):
 			os.makedirs(appDictsPath)
@@ -79,7 +85,10 @@ def ensureEntryCacheSize(appName):
 		if acc >= entryCacheSize:
 					dicts[e[0]] = None
 
-appDictsPath = os.path.abspath(os.path.join(speechDictHandler.speechDictsPath, "appDicts"))
+try:
+	appDictsPath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDir, "appDicts"))
+except:
+	appDictsPath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDir, "appDicts"))
 dicts = loadEmptyDicts()
 entryCacheSize = 20000
 
@@ -94,11 +103,8 @@ class AppDictionaryDialog(DictionaryDialog):
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
-
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
-		_MainWindows = Initialize()
-		_MainWindows.start()
 		self.__currentDict = None
 		self.__currentAppName = None
 		self.dictsMenu = gui.mainFrame.sysTrayIcon.preferencesMenu.GetMenuItems()[1].GetSubMenu()
@@ -115,10 +121,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		nextHandler()
 
 	@script( 
-	# For translators: Message to be announced during Keyboard Help 
-	description = _("Shows the application-specific dictionary dialog"), 
-	category = (SCRCAT_CONFIG), 
-	gesture = "kb:NVDA+Control+Shift+d")
+		# Translators: Message to be announced during Keyboard Help 
+		description = _("Shows the application-specific dictionary dialog"), 
+		category = (SCRCAT_CONFIG), 
+		gesture = "kb:NVDA+Control+Shift+d")
 	def script_editDict(self, gesture):
 		prevFocus = gui.mainFrame.prevFocus
 		appName = prevFocus.appModule.appName if prevFocus else getAppName()
@@ -130,9 +136,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		global title
 		title = _("Dictionary for {arg0}").format(arg0=appName)
 		try:
-			gui.mainFrame._popupSettingsDialog(AppDictionaryDialog)
+			gui.mainFrame.popupSettingsDialog(AppDictionaryDialog)
 		except:
-			gui.mainFrame._popupSettingsDialog(gui.DictionaryDialog, title, dict)
+			gui.mainFrame.popupSettingsDialog(gui.DictionaryDialog, title, dict)
 
 	# Temp dictionary usage taken from emoticons add-on
 	def __setCurrentDict(self, dict):
