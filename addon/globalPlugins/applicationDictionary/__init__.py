@@ -30,18 +30,25 @@ import addonHandler
 addonHandler.initTranslation()
 
 title = ""
-# Todo: fix a problem that causes dictionaries not to load sometimes on WUP apps
-# Todo: When in NVDA GUI disable previous app dictionary
+# ToDo: fix a problem that causes dictionaries not to load sometimes on WUP apps
+# ToDo: When in NVDA GUI disable previous app dictionary
+
+try:
+	dictsPath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDir))
+except AttributeError:
+	dictsPath = os.path.abspath(os.path.join(speechDictHandler.speechDictsPath))
+try:
+	appDictsPath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDir, "appDicts"))
+except AttributeError:
+	appDictsPath = os.path.abspath(os.path.join(speechDictHandler.speechDictsPath, "appDicts"))
+
 def getAppName():
 	return api.getFocusObject().appModule.appName
 
 def getDictFilePath(appName):
 	dictFileName = appName + ".dic"
-	dictFilePath = os.path.join(NVDAState.WritePaths.speechDictsDir, dictFileName)
-	try:
-		oldDictFilePath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDirdictFileName))
-	except:
-		oldDictFilePath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDir, dictFileName))
+	dictFilePath = os.path.join(appDictsPath, dictFileName)
+	oldDictFilePath = os.path.abspath(os.path.join(dictsPath, dictFileName))
 	if not os.path.isfile(dictFilePath) and os.path.isfile(oldDictFilePath):
 		if not os.path.exists(appDictsPath):
 			os.makedirs(appDictsPath)
@@ -85,10 +92,6 @@ def ensureEntryCacheSize(appName):
 		if acc >= entryCacheSize:
 					dicts[e[0]] = None
 
-try:
-	appDictsPath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDir, "appDicts"))
-except:
-	appDictsPath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDir, "appDicts"))
 dicts = loadEmptyDicts()
 entryCacheSize = 20000
 
@@ -136,9 +139,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		global title
 		title = _("Dictionary for {arg0}").format(arg0=appName)
 		try:
-			gui.mainFrame.popupSettingsDialog(AppDictionaryDialog)
+			openDialog = gui.mainFrame.popupSettingsDialog
+		except AttributeError:
+			openDialog = gui.mainFrame._popupSettingsDialog
+		try:
+			openDialog(AppDictionaryDialog)
 		except:
-			gui.mainFrame.popupSettingsDialog(gui.DictionaryDialog, title, dict)
+			openDialog(gui.DictionaryDialog, title, dict)
 
 	# Temp dictionary usage taken from emoticons add-on
 	def __setCurrentDict(self, dict):

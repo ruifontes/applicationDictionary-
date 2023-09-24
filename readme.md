@@ -18,4 +18,4 @@ The default add-on shortcut can be changed through NVDA's input gestures dialog:
 NVDA+Control+Shift+d
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.19/applicationDictionary-2023.09.19.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.24/applicationDictionary-2023.09.24.nvda-addon

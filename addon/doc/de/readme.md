@@ -18,4 +18,4 @@ Der Tastenbefehl der Erweiterung kann über das Dialogfeld für die Tastenbefehl
 NVDA+Strg+Umschalt+D
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.19/applicationDictionary-2023.09.19.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.24/applicationDictionary-2023.09.24.nvda-addon
