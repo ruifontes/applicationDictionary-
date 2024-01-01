@@ -2,7 +2,7 @@
 
 ## Informations
 * Authors: Rui Fontes and Ricardo M. Leonarczyk with colaboration of Cyrille Bougot
-* Version: 2023.03
+* Version: 2024.01.01
 * Download [stable version][1]
 * Compatibility: NVDA 2019.3 and beyond
 
@@ -18,4 +18,4 @@ The default add-on shortcut can be changed through NVDA's input gestures dialog:
 NVDA+Control+Shift+d
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.24/applicationDictionary-2023.09.24.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2024.01.01/applicationDictionary-2024.01.01.nvda-addon

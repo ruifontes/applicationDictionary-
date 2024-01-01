@@ -3,8 +3,8 @@
 ## Informaciones
 
 * Autores: Rui Fontes y Ricardo M. Leonarczyk con la colaboración de Cyrille Bougot
-* Versión: 2022.03.26
-* Descargar [versión estable](https://github.com/ruifontes/applicationDictionary-/releases/download/2022.03.26/applicationDictionary-2022.03.26.nvda-addon)
+* Versión: 2024.01.01
+* Descargar [versión estable][1]
 * Compatibilidad: NVDA 2019.3 y superior
 
 
@@ -19,4 +19,4 @@ El atajo de complemento predeterminado se puede cambiar a través del diálogo d
 NVDA+Control+Shift+d
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.24/applicationDictionary-2023.09.24.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2024.01.01/applicationDictionary-2024.01.01.nvda-addon

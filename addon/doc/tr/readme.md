@@ -2,7 +2,7 @@
 
 ## Bilgi
 * Yazarlar: Cyrille Bougot'nun işbirliğiyle Rui Fontes ve Ricardo M. Leonarczyk
-* Sürüm: 2023.03
+* Sürüm: 2024.01.01
 * [Kararlı sürümü indirin][1]
 * Uyumluluk: NVDA 2019.3 ve sonrası
 
@@ -24,4 +24,4 @@ Yeni sürüm kontrolü, NVDA her yüklendiğinde gerçekleştirilir.
 Bunu istiyorsanız, NVDA, Tercihler, Ayarlar'a gidin ve eklenti kategorisinde onay kutusunu işaretleyin.
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2023.09.24/applicationDictionary-2023.09.24.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2024.01.01/applicationDictionary-2024.01.01.nvda-addon
