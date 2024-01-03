@@ -2,7 +2,7 @@
 
 ## Informationen
 * Autoren: Rui Fontes, Ricardo M. Leonarczyk und Cyrille Bougot
-* Version: 2024.01.01
+* Version: 2024.01.03
 * [Stable Version herunterladen][1]
 * NVDA-Kompatibilität: Ab 2019.3
 
@@ -18,4 +18,4 @@ Der Tastenbefehl der Erweiterung kann über das Dialogfeld für die Tastenbefehl
 NVDA+Strg+Umschalt+D
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2024.01.01/applicationDictionary-2024.01.01.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2024.01.03/applicationDictionary-2024.01.03.nvda-addon

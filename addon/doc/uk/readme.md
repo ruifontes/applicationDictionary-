@@ -2,7 +2,7 @@
 
 ## Інформація
 * Автори: Rui Fontes і Ricardo M. Leonarczyk при співпраці з Cyrille Bougot
-* Версія: 2024.01.01
+* Версія: 2024.01.03
 * Завантажити [стабільну версію][1]
 * Сумісність: NVDA 2019.3 і вище
 
@@ -18,4 +18,4 @@
 NVDA+Control+Shift+d
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2024.01.01/applicationDictionary-2024.01.01.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2024.01.03/applicationDictionary-2024.01.03.nvda-addon

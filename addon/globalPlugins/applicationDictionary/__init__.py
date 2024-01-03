@@ -18,7 +18,10 @@ except:
 	from gui import DictionaryDialog
 import wx
 import speechDictHandler
-import NVDAState
+try:
+	import NVDAState
+except:
+	pass
 from scriptHandler import script
 try:
 	from globalCommands import SCRCAT_CONFIG
@@ -35,11 +38,11 @@ title = ""
 
 try:
 	dictsPath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDir))
-except AttributeError:
+except NameError:
 	dictsPath = os.path.abspath(os.path.join(speechDictHandler.speechDictsPath))
 try:
 	appDictsPath = os.path.abspath(os.path.join(NVDAState.WritePaths.speechDictsDir, "appDicts"))
-except AttributeError:
+except NameError:
 	appDictsPath = os.path.abspath(os.path.join(speechDictHandler.speechDictsPath, "appDicts"))
 
 def getAppName():
