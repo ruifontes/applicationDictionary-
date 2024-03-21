@@ -2,7 +2,7 @@
 
 ## Informações
 * Autores: Rui Fontes e Ricardo Leonarczyk com colaboração de Cyrille Bougot
-* actualizado em 03/01/2024
+* actualizado em 21/03/2024
 * Descarregar a [versão estável][1]
 * Compatibilidade: NVDA versão 2019.3 e seguintes
 
@@ -18,4 +18,4 @@ O comando padrão pode ser modificado através do diálogo "Definir comandos:" n
 NVDA+Control+Shift+d
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2024.01.03/applicationDictionary-2024.01.03.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2024.03.21/applicationDictionary-2024.03.21.nvda-addon

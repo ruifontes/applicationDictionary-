@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""Allows creation of application-specific dictionaries. Use the command "NVDA+Control+Shift+d" to access the dictionary for the current application."""),
 	# version
-	"addon_version": "2024.01.03",
+	"addon_version": "2024.03.21",
 	# Author(s)
 	"addon_author": "Rui Fontes <rui.fontes@tiflotecnia.com> and Ricardo Leonarczyk <ricardo.leonarczyk95@gmail.com> and colaboration of Cyrille Bougot",
 	# URL for the add-on documentation support
