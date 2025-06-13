@@ -24,4 +24,4 @@ Yeni sürüm kontrolü, NVDA her yüklendiğinde gerçekleştirilir.
 Bunu istiyorsanız, NVDA, Tercihler, Ayarlar'a gidin ve eklenti kategorisinde onay kutusunu işaretleyin.
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2025.06.13/applicationDictionary-2025.06.13.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2025.06.14/applicationDictionary-2025.06.14.nvda-addon
