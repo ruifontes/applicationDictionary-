@@ -20,4 +20,4 @@
 NVDA+Control+Shift+d
 
 
-[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2024.03.21/applicationDictionary-2024.03.21.nvda-addon
+[1]: https://github.com/ruifontes/applicationDictionary-/releases/download/2025.06.14/applicationDictionary-2025.06.14.nvda-addon
