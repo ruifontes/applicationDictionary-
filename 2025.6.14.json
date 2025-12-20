@@ -3,13 +3,13 @@
 	"displayName": "Application dictionary",
 	"URL": "",
 	"description": "Allows creation of application-specific dictionaries. Use the command \"NVDA+Control+Shift+d\" to access the dictionary for the current application.",
-	"sha256": "2e98bc1075b5e5921183a031de3773c7593207a138b285241d5c7bd384a41f23",
+	"sha256": "28f073a716843d204360e9b263ddfbe81636b6016d58fe0389a4feb94526e3c6",
 	"homepage": "https://github.com/ruifontes/applicationDictionary-",
-	"addonVersionName": "2024.03.21",
+	"addonVersionName": "2025.06.14",
 	"addonVersionNumber": {
-		"major": 2024,
-		"minor": 3,
-		"patch": 21
+		"major": 2025,
+		"minor": 6,
+		"patch": 14
 	},
 	"minNVDAVersion": {
 		"major": 2019,
@@ -17,7 +17,7 @@
 		"patch": 0
 	},
 	"lastTestedVersion": {
-		"major": 2024,
+		"major": 2025,
 		"minor": 1,
 		"patch": 0
 	},
