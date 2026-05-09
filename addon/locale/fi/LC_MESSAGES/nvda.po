@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'applicationDictionary' '2023.09.24'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2024-04-19 20:20+0300\n"
-"PO-Revision-Date: 2024-04-19 20:23+0300\n"
+"POT-Creation-Date: 2026-05-09 01:32+0100\n"
+"PO-Revision-Date: 2026-05-09 15:27+0300\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: fi_FI <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -16,15 +16,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-Basepath: .\n"
 
 #. Translators: The label for the menu item to open Application specific speech dictionary dialog.
-#: addon\globalPlugins\applicationDictionary\__init__.py:118
+#: addon\globalPlugins\applicationDictionary\old__init__.py:118
+#: addon\globalPlugins\applicationDictionary\__init__.py:119
 msgid "&Application Dictionary..."
-msgstr "&Sovellussanasto..."
+msgstr "&Sovellus..."
 
-#: addon\globalPlugins\applicationDictionary\__init__.py:118
+#: addon\globalPlugins\applicationDictionary\old__init__.py:118
+#: addon\globalPlugins\applicationDictionary\__init__.py:119
 msgid ""
 "A dialog where you can set application-specific dictionary by adding "
 "dictionary entries to the list"
@@ -33,11 +35,13 @@ msgstr ""
 "luetteloon sanastomerkintöjä"
 
 #. Translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\applicationDictionary\__init__.py:131
+#: addon\globalPlugins\applicationDictionary\old__init__.py:131
+#: addon\globalPlugins\applicationDictionary\__init__.py:133
 msgid "Shows the application-specific dictionary dialog"
 msgstr "Näyttää sovelluskohtaisen sanastovalintaikkunan"
 
-#: addon\globalPlugins\applicationDictionary\__init__.py:143
+#: addon\globalPlugins\applicationDictionary\old__init__.py:143
+#: addon\globalPlugins\applicationDictionary\__init__.py:145
 msgid "Dictionary for {arg0}"
 msgstr "Sanasto sovellukselle {arg0}"
 
@@ -55,16 +59,16 @@ msgstr ""
 msgid "Uninstall incompatible add-on"
 msgstr "Poista yhteensopimaton versio"
 
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
-#: buildVars.py:23
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:21
 msgid "Application dictionary"
 msgstr "Sovellussanasto"
 
 #. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:26
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
 msgid ""
 "Allows creation of application-specific dictionaries. Use the command "
 "\"NVDA+Control+Shift+d\" to access the dictionary for the current "
@@ -72,3 +76,14 @@ msgid ""
 msgstr ""
 "Mahdollistaa sovelluskohtaisten sanastojen luomisen. Avaa nykyisen "
 "sovelluksen sanasto painamalla NVDA+Ctrl+Vaihto+D."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:29
+msgid ""
+"Set compatibility with NVDA 2026.1\n"
+"Change code to replace the deprecation of speechDictHandler.dictionaries."
+msgstr ""
+"Lisätty NVDA 2026.1 -yhteensopivuus\n"
+"Koodia päivitetty korvaamaan käytöstä poistuva "
+"speechDictHandler.dictionaries-attribuutti."
