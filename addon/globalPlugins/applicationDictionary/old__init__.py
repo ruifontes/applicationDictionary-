@@ -28,7 +28,6 @@ try:
 except:
 	SCRCAT_CONFIG = None
 import addonHandler
-import speech
 
 # Start translation process
 addonHandler.initTranslation()
@@ -118,7 +117,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Translators: The label for the menu item to open Application specific speech dictionary dialog.
 		self.appDictDialog = self.dictsMenu.Append(wx.ID_ANY, _("&Application Dictionary..."), _("A dialog where you can set application-specific dictionary by adding dictionary entries to the list"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_editDict, self.appDictDialog)
-		speech.extensions.filter_speechSequence.register(self._filterSpeechSequence)
 
 	def event_gainFocus(self, obj, nextHandler):
 		appName = getAppName()
@@ -152,15 +150,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except:
 			openDialog(gui.DictionaryDialog, title, dict)
 
-	# Suggestion of ChatGPT
+	# Temp dictionary usage taken from emoticons add-on
 	def __setCurrentDict(self, dict):
+		if self.__currentDict:
+			for e in self.__currentDict: speechDictHandler.dictionaries["temp"].remove(e)
 		self.__currentDict = dict
-
-	# Suggestion of ChatGPT
-	def _filterSpeechSequence(self, speechSequence):
-		if not self.__currentDict:
-			return speechSequence
-		return [self.__currentDict.sub(item) if isinstance(item, str) else item for item in speechSequence]
+		if self.__currentDict:
+			speechDictHandler.dictionaries["temp"].extend(self.__currentDict)
 
 	def terminate(self):
 		# This terminate function is necessary when creating new menus.
@@ -169,10 +165,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self.dictsMenu.Remove(self.appDictDialog)
 			else:
 				self.dictsMenu.RemoveItem(self.appDictDialog)
-		except:
-			pass
-		try:
-			speech.extensions.filter_speechSequence.unregister(self._filterSpeechSequence)
 		except:
 			pass
 
