@@ -1,17 +1,15 @@
-# \#Application Dictionary
+# Application Dictionary
 
 ## 
 
-## 
-
-## \##Informations
+## Informations
 
 * Authors: Rui Fontes and Ricardo M. Leonarczyk with colaboration of Cyrille Bougot
 * Compatibility: NVDA 2023.1 and beyond
 
 
 
-## \##Usage
+## Usage
 
 This simple add-on makes possible to create application-specific dictionaries for NVDA.
 To use the add-on, just go to the application for wich you want a dictionary for, and press NVDA+control+shift+d.
@@ -20,7 +18,7 @@ The default add-on shortcut can be changed through NVDA's input gestures dialog:
 
 
 
-## \##Command
+## Command
 
 NVDA+Control+Shift+d
 

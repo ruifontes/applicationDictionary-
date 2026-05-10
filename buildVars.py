@@ -23,11 +23,10 @@ addon_info = AddonInfo(
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
 	addon_description = _("""Allows creation of application-specific dictionaries. Use the command "NVDA+Control+Shift+d" to access the dictionary for the current application."""),
 	# version
-	addon_version = "2026.05.09",
+	addon_version = "2026.05.11",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog = _("""Set compatibility with NVDA 2026.1
-Change code to replace the deprecation of speechDictHandler.dictionaries."""),
+	addon_changelog = _("""Fix compatibility with NVDA 2026.1 since 26.05.09 didn't work."""),
 	# Author(s)
 	addon_author = "Rui Fontes <rui.fontes@tiflotecnia.com> and Ricardo Leonarczyk <ricardo.leonarczyk95@gmail.com> and colaboration of Cyrille Bougot",
 	# URL for the add-on documentation support

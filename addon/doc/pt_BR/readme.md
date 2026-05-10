@@ -1,15 +1,15 @@
-# \#Dicionário de aplicações
+# Dicionário de aplicações
 
 
 
-## \##Informações
+## Informações
 
 * Autores: Rui Fontes e Ricardo Leonarczyk com colaboração de Cyrille Bougot
 * Compatibilidade: NVDA versão 2023.1 e seguintes
 
 
 
-## \##Apresentação
+## Apresentação
 
 Este extra permite criar dicionários do NVDA específicos para uma aplicação.
 Para utilizá-lo, basta na aplicação, para a  qual deseja criar um dicionário, pressionar NVDA+control+shift+d.
@@ -18,9 +18,7 @@ O comando padrão pode ser modificado através do diálogo "Definir comandos:" n
 
 
 
-## \##Comando
+## Comando
 
 NVDA+Control+Shift+d
-
-
 

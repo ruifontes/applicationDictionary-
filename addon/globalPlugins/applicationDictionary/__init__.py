@@ -70,7 +70,10 @@ def loadEmptyDicts():
 
 def loadDict(appName):
 	ensureEntryCacheSize(appName)
-	dict = speechDictHandler.types.SpeechDict()
+	try:
+		dict = speechDictHandler.types.SpeechDict()
+	except AttributeError:
+		dict = speechDictHandler.SpeechDict()
 	dict.load(getDictFilePath(appName))
 	dicts[appName] = dict
 	return dict
